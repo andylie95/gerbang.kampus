@@ -18,7 +18,7 @@ def show_page(T, questions, career_mapping, uni_df):
     # Display chat history
     for message in st.session_state.chat_history:
         with st.chat_message(message["role"]):
-            st.markdown(message["content"])
+            st.markdown(message["content"], unsafe_allow_html=True)
 
     # Main chat logic
     if st.session_state.assessment_step < len(questions):
@@ -72,7 +72,7 @@ def show_page(T, questions, career_mapping, uni_df):
                 
                 st.session_state.chat_history.append({"role": "assistant", "content": results_text})
 
-                # --- NEW: AI RECOMMENDATION PART ---
+                # --- AI RECOMMENDATION PART ---
                 if recommended_subjects:
                     reco_text = f"\n---\n\n### {T('AI University Recommendations')}\n"
                     reco_text += f"{T('Based on your results, here are the top-ranked universities for your recommended subjects:')}\n"
@@ -83,7 +83,9 @@ def show_page(T, questions, career_mapping, uni_df):
                         subject_df = uni_df[uni_df['Subject'].str.contains(subject, case=False, na=False)].sort_values(by='Rank').head(5)
                         if not subject_df.empty:
                             for i, row in subject_df.iterrows():
-                                reco_text += f"1. **{row['University']}** ({T('Rank')}: {row['Rank']})\n"
+                                # --- CHANGE APPLIED HERE ---
+                                # The university name is now a clickable link
+                                reco_text += f"1. **<a href='{row['Website']}' target='_blank'>{row['University']}</a>** ({T('Rank')}: {row['Rank']})\n"
                         else:
                             reco_text += f"_{T('No specific top universities found in our database for this subject.')}_\n"
                     
