@@ -18,7 +18,8 @@ def T(text):
 def load_data():
     """Loads university data from CSV and cleans it."""
     try:
-        df = pd.read_csv('data/universities.csv')
+        # FIX: Added encoding='utf-8' to handle special characters in the CSV file.
+        df = pd.read_csv('data/universities.csv', encoding='utf-8')
         # Ensure essential columns are strings to avoid errors
         for col in ['Subject', 'Level', 'University', 'Continent']:
             df[col] = df[col].astype(str).fillna('')
