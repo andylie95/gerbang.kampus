@@ -1,0 +1,214 @@
+{
+  "questions": [
+    {
+      "question": "I enjoy breaking down complex problems into smaller, manageable parts.",
+      "category": "Analytical"
+    },
+    {
+      "question": "I feel energized when working with data, charts, and figures.",
+      "category": "Quantitative"
+    },
+    {
+      "question": "I am fascinated by scientific breakthroughs and experiments.",
+      "category": "Scientific"
+    },
+    {
+      "question": "I am skilled at building, crafting, or fixing things with my hands.",
+      "category": "Practical"
+    },
+    {
+      "question": "I love expressing myself through drawing, painting, or digital design.",
+      "category": "Artistic"
+    },
+    {
+      "question": "Understanding the history of different cultures and societies excites me.",
+      "category": "Humanities"
+    },
+    {
+      "question": "I am passionate about protecting the environment and promoting sustainability.",
+      "category": "Environmental"
+    },
+    {
+      "question": "I find it rewarding to help people overcome their personal challenges.",
+      "category": "Empathy"
+    },
+    {
+      "question": "I can clearly articulate my thoughts and persuade others to my point of view.",
+      "category": "Communication"
+    },
+    {
+      "question": "I am driven by seeing a project through from idea to completion.",
+      "category": "Organizational"
+    },
+    {
+      "question": "I am comfortable taking charge and guiding a team towards a common goal.",
+      "category": "Leadership"
+    },
+    {
+      "question": "I enjoy learning about how businesses operate and make money.",
+      "category": "Business"
+    },
+    {
+      "question": "I am interested in the laws that govern society and ensure justice.",
+      "category": "Legal"
+    },
+    {
+      "question": "I'm always the first to try out new gadgets and software.",
+      "category": "Technological"
+    },
+    {
+      "question": "Thinking about abstract concepts and philosophical questions is stimulating for me.",
+      "category": "Abstract-Thinking"
+    },
+    {
+      "question": "I am methodical and pay great attention to detail in my work.",
+      "category": "Detail-Oriented"
+    },
+    {
+      "question": "I thrive in dynamic environments where I have to think on my feet.",
+      "category": "Adventurous"
+    },
+    {
+      "question": "I am passionate about health, nutrition, and physical well-being.",
+      "category": "Health"
+    },
+    {
+      "question": "I am curious about how the human mind works.",
+      "category": "Psychological"
+    },
+    {
+      "question": "I enjoy working with computer code and developing applications.",
+      "category": "Programming"
+    }
+  ],
+  "career_mapping": {
+    "Analytical": [
+      "Computer Science",
+      "Engineering",
+      "Economics",
+      "Physics"
+    ],
+    "Quantitative": [
+      "Mathematics",
+      "Statistics",
+      "Business",
+      "Finance",
+      "Accounting"
+    ],
+    "Scientific": [
+      "Medicine",
+      "Biology",
+      "Chemistry",
+      "Physics",
+      "Environmental Science"
+    ],
+    "Practical": [
+      "Engineering",
+      "Architecture",
+      "Trades",
+      "Industrial Design"
+    ],
+    "Artistic": [
+      "Fine Arts",
+      "Graphic Design",
+      "Architecture",
+      "Film",
+      "Music"
+    ],
+    "Humanities": [
+      "History",
+      "Literature",
+      "Anthropology",
+      "Archaeology",
+      "Linguistics"
+    ],
+    "Environmental": [
+      "Environmental Science",
+      "Geology",
+      "Oceanography",
+      "Forestry"
+    ],
+    "Empathy": [
+      "Psychology",
+      "Nursing",
+      "Social Work",
+      "Education",
+      "Medicine"
+    ],
+    "Communication": [
+      "Law",
+      "Journalism",
+      "Marketing",
+      "Public Relations",
+      "Politics"
+    ],
+    "Organizational": [
+      "Management",
+      "Business Administration",
+      "Project Management",
+      "Logistics"
+    ],
+    "Leadership": [
+      "Business",
+      "Management",
+      "Political Science",
+      "Public Administration"
+    ],
+    "Business": [
+      "Business Administration",
+      "Marketing",
+      "Finance",
+      "Management",
+      "Entrepreneurship"
+    ],
+    "Legal": [
+      "Law",
+      "Criminology",
+      "Political Science"
+    ],
+    "Technological": [
+      "Computer Science",
+      "Information Technology",
+      "Engineering",
+      "Data Science"
+    ],
+    "Abstract-Thinking": [
+      "Philosophy",
+      "Mathematics",
+      "Physics",
+      "Theoretical Science"
+    ],
+    "Detail-Oriented": [
+      "Accounting",
+      "Law",
+      "Computer Science",
+      "Library Science",
+      "Dentistry"
+    ],
+    "Adventurous": [
+      "Tourism",
+      "Geography",
+      "Geology",
+      "Entrepreneurship"
+    ],
+    "Health": [
+      "Medicine",
+      "Nursing",
+      "Public Health",
+      "Pharmacy",
+      "Nutrition"
+    ],
+    "Psychological": [
+      "Psychology",
+      "Neuroscience",
+      "Cognitive Science",
+      "Social Work"
+    ],
+    "Programming": [
+      "Computer Science",
+      "Software Engineering",
+      "Data Science",
+      "Web Development"
+    ]
+  }
+}
