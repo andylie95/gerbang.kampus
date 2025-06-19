@@ -156,7 +156,7 @@ elif st.session_state.page == 'finder':
     university_finder.show_page(T, uni_df)
 
 elif st.session_state.page == 'assessment':
-    assessment.show_page(T, questions, career_mapping)
+    assessment.show_page(T, questions, career_mapping, uni_df)
 
 elif st.session_state.page == 'about':
     about.show_page(T)
