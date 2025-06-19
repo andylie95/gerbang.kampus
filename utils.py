@@ -30,8 +30,11 @@ def translate_text(text: str, to_language: str, cache: dict):
         # Initialize the translation client
         text_translator = TextTranslationClient(endpoint=endpoint, credential=credential)
         
-        # Call the translation service
-        result = text_translator.translate(content=[text], to=[to_language])
+        # --- FIX APPLIED HERE ---
+        # The new library version requires the text to be in a list of dictionaries passed to the 'body' argument.
+        request_body = [{'text': text}]
+        result = text_translator.translate(body=request_body, to_language=[to_language])
+        
         translation = result[0].translations[0].text
         
         # Store the successful translation in the cache
