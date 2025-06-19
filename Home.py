@@ -10,8 +10,10 @@ import about
 
 # --- AZURE SECRETS (EMBEDDED AS REQUESTED) ---
 # For production, it's highly recommended to use Streamlit's Secrets Management.
-AZURE_TRANSLATOR_KEY = "8770f1a53459427d897f18904336bf9b"
+AZURE_TRANSLATOR_KEY = "a6ed16b143fa41db9ec899e9594b9e9a"
 AZURE_TRANSLATOR_ENDPOINT = "https://api.cognitive.microsofttranslator.com/"
+# --- IMPORTANT: ADD YOUR AZURE REGION HERE ---
+AZURE_TRANSLATOR_REGION = "southeastasia" # e.g., "eastus", "southeastasia", "westeurope"
 
 # --- PAGE CONFIGURATION ---
 st.set_page_config(
@@ -63,7 +65,6 @@ st.markdown("""
 @st.cache_data
 def load_all_data():
     try:
-        # --- FIX APPLIED HERE ---
         # Switched to 'latin-1' encoding to handle special characters from the CSV file.
         uni_df = pd.read_csv('data/universities.csv', encoding='latin-1')
         
@@ -86,7 +87,15 @@ if 'language_code' not in st.session_state:
 
 translation_cache = get_translation_cache()
 def T(text):
-    return translate_text(text, st.session_state.language_code, translation_cache, AZURE_TRANSLATOR_KEY, AZURE_TRANSLATOR_ENDPOINT)
+    # Pass all three credentials to the translation function
+    return translate_text(
+        text, 
+        st.session_state.language_code, 
+        translation_cache, 
+        AZURE_TRANSLATOR_KEY, 
+        AZURE_TRANSLATOR_ENDPOINT,
+        AZURE_TRANSLATOR_REGION
+    )
 
 # --- NAVIGATION & PAGE ROUTING ---
 if 'page' not in st.session_state:
