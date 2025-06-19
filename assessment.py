@@ -15,9 +15,12 @@ def show_page(T, questions, career_mapping, uni_df):
         st.session_state.assessment_answers = []
         st.session_state.chat_history = [{"role": "assistant", "content": T("Hi there! Ready to start your assessment?")}]
 
-    # Display chat history
+    # --- CHANGE APPLIED HERE ---
+    # Display chat history with custom icons
     for message in st.session_state.chat_history:
-        with st.chat_message(message["role"]):
+        # Assign a unique avatar for the assistant and the user
+        avatar_icon = "🤖" if message["role"] == "assistant" else "🗣️"
+        with st.chat_message(message["role"], avatar=avatar_icon):
             st.markdown(message["content"], unsafe_allow_html=True)
 
     # Main chat logic
@@ -25,7 +28,7 @@ def show_page(T, questions, career_mapping, uni_df):
         current_q = questions[st.session_state.assessment_step]
         q_text = T(current_q['question'])
 
-        if st.session_state.chat_history[-1]["content"] != q_text:
+        if not st.session_state.chat_history or st.session_state.chat_history[-1]["content"] != q_text:
             st.session_state.chat_history.append({"role": "assistant", "content": q_text})
             st.rerun()
 
@@ -83,7 +86,6 @@ def show_page(T, questions, career_mapping, uni_df):
                         subject_df = uni_df[uni_df['Subject'].str.contains(subject, case=False, na=False)].sort_values(by='Rank').head(5)
                         if not subject_df.empty:
                             for i, row in subject_df.iterrows():
-                                # --- CHANGE APPLIED HERE ---
                                 # The university name is now a clickable link
                                 reco_text += f"1. **<a href='{row['Website']}' target='_blank'>{row['University']}</a>** ({T('Rank')}: {row['Rank']})\n"
                         else:
