@@ -10,7 +10,7 @@ import about
 
 # --- AZURE SECRETS (EMBEDDED AS REQUESTED) ---
 # For production, it's highly recommended to use Streamlit's Secrets Management.
-AZURE_TRANSLATOR_KEY = "PASTE_YOUR_AZURE_KEY_HERE"
+AZURE_TRANSLATOR_KEY = "8770f1a53459427d897f18904336bf9b"
 AZURE_TRANSLATOR_ENDPOINT = "https://api.cognitive.microsofttranslator.com/"
 
 # --- PAGE CONFIGURATION ---
