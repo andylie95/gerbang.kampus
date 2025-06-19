@@ -10,7 +10,7 @@ import about
 
 # --- AZURE SECRETS (EMBEDDED AS REQUESTED) ---
 # For production, it's highly recommended to use Streamlit's Secrets Management.
-AZURE_TRANSLATOR_KEY = "a6ed16b143fa41db9ec899e9594b9e9a"
+AZURE_TRANSLATOR_KEY = "PASTE_YOUR_AZURE_KEY_HERE"
 AZURE_TRANSLATOR_ENDPOINT = "https://api.cognitive.microsofttranslator.com/"
 
 # --- PAGE CONFIGURATION ---
@@ -63,7 +63,10 @@ st.markdown("""
 @st.cache_data
 def load_all_data():
     try:
-        uni_df = pd.read_csv('data/universities.csv', engine='python', on_bad_lines='skip')
+        # --- FIX APPLIED HERE ---
+        # Switched to 'latin-1' encoding to handle special characters from the CSV file.
+        uni_df = pd.read_csv('data/universities.csv', encoding='latin-1')
+        
         with open('data/assessment_questions.json', 'r', encoding='utf-8') as f:
             assessment_data = json.load(f)
         return uni_df, assessment_data['questions'], assessment_data['career_mapping']
