@@ -22,7 +22,16 @@ def show_page(T, df):
     # Continent Checkboxes
     st.sidebar.subheader(T("Continent"))
     continents_english = sorted(df['Continent'].unique())
-    selected_continents = [continent for continent in continents_english if st.sidebar.checkbox(T(continent), value=True, key=f"continent_{continent}")]
+    # Use a session state to remember filter selections
+    if 'selected_continents' not in st.session_state:
+        st.session_state.selected_continents = continents_english[:] # Default to all selected
+    
+    selected_continents = []
+    for continent in continents_english:
+        if st.sidebar.checkbox(T(continent), value=(continent in st.session_state.selected_continents), key=f"continent_{continent}"):
+            selected_continents.append(continent)
+    st.session_state.selected_continents = selected_continents
+
 
     # Subject Checkboxes
     st.sidebar.subheader(T("Subject"))
